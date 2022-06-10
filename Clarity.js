@@ -53,6 +53,12 @@ var Clarity = function () {
     can_jump: true
   };
 
+  if(this.id && this.multiplayer){
+    if(!signedin()){
+      this.multiplayer = false;
+      signin();
+    }
+  }
 
   window.onkeydown = this.keydown.bind(this);
   window.onkeyup = this.keyup.bind(this);
@@ -480,7 +486,7 @@ Clarity.prototype.move_player = function () {
   // Emit event to server
   if(this.id && this.multiplayer){
     if(!signedin()){
-      signin();
+      window.location.href="https://discountdevs.github.io/Clarity/";
     }
     this.socket.emit("move", this.id, {x: this.player.loc.x, y: this.player.loc.y}, signedin());
   }
