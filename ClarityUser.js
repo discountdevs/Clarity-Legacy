@@ -74,7 +74,7 @@ function splitIntoChunk(inputArray, perChunk) {
       container.innerHTML = container.innerHTML + `
       <center>
       <div id="pagination" class="w3-row-padding">
-        <div class="button-62" style= "cursor: pointer;" id="back" onclick="window.location.href='https://henrymartin5.github.io/Clarity/workshop.html'">
+        <div class="button-62" style= "cursor: pointer;" id="back" onclick="window.location.href='https://discountdevs.github.io/Clarity/workshop.html'">
           <p>&lt; Back</p>
         </div>
       </div>
@@ -86,5 +86,5 @@ function splitIntoChunk(inputArray, perChunk) {
   
   
   function loadLevelById(id) {
-    window.location.href = "https://henrymartin5.github.io/Clarity/level.html?id=" + (id).toString();
+    window.location.href = "https://discountdevs.github.io/Clarity/level.html?id=" + (id).toString();
   }

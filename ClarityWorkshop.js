@@ -116,12 +116,12 @@ window.onload = function () {
 
 
 function loadPage(page) {
-  window.location.href = "https://henrymartin5.github.io/Clarity/workshop.html?page=" + (page).toString();
+  window.location.href = "https://discountdevs.github.io/Clarity/workshop.html?page=" + (page).toString();
 }
 
 
 function loadLevelById(id) {
-  window.location.href = "https://henrymartin5.github.io/Clarity/level.html?id=" + (id).toString();
+  window.location.href = "https://discountdevs.github.io/Clarity/level.html?id=" + (id).toString();
 }
 
 
@@ -181,7 +181,7 @@ function mylvls(){
   // get the signed in user
   var user = signedin();
   if(user){
-    window.location.href="https://henrymartin5.github.io/Clarity/user.html?user="+encodeURIComponent(user);
+    window.location.href="https://discountdevs.github.io/Clarity/user.html?user="+encodeURIComponent(user);
   } else {
     signin();
   }

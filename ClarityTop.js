@@ -76,7 +76,7 @@ function splitIntoChunk(inputArray, perChunk) {
       container.innerHTML = container.innerHTML + `
       <center>
       <div id="pagination" class="w3-row-padding">
-        <a class="button-62" role="button" style= "cursor: pointer;" id="back" href="https://henrymartin5.github.io/Clarity/workshop.html?page=1">
+        <a class="button-62" role="button" style= "cursor: pointer;" id="back" href="https://discountdevs.github.io/Clarity/workshop.html?page=1">
           <p>&lt; Back</p>
         </a>
 
@@ -88,19 +88,19 @@ function splitIntoChunk(inputArray, perChunk) {
   
   
   function loadPage(page) {
-    window.location.href = "https://henrymartin5.github.io/Clarity/workshop.html?page=" + (page).toString();
+    window.location.href = "https://discountdevs.github.io/Clarity/workshop.html?page=" + (page).toString();
   }
   
   
   function loadLevelById(id) {
-    window.location.href = "https://henrymartin5.github.io/Clarity/level.html?id=" + (id).toString();
+    window.location.href = "https://discountdevs.github.io/Clarity/level.html?id=" + (id).toString();
   }
 
   function mylvls(){
     // get the signed in user
     var user = signedin();
     if(user){
-      window.location.href="https://henrymartin5.github.io/Clarity/user.html?user="+encodeURIComponent(user);
+      window.location.href="https://discountdevs.github.io/Clarity/user.html?user="+encodeURIComponent(user);
     } else {
       signin();
     }
