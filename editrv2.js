@@ -9,8 +9,12 @@ function init() {
         return cv;
     }
 
-    readjustCanvas = function() {
-        // TODO: write function
+    readjustCanvas = function(canvas) {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        canvas.style.width = window.innerWidth + "px";
+        canvas.style.height = window.innerHeight + "px";
+        game.set_viewport(canvas.width, canvas.height);
     }
     
     //Create canvas with the device resolution.
@@ -23,7 +27,7 @@ function init() {
     game.set_viewport(canvas.width, canvas.height);
     game.load_map(window.map);
 
-    // User controls the viewport with WASD. Viewport shouldn't be limited.
+    // User controls the viewport with WASD. Viewport shan't be limited.
     game.limit_viewport = false;
 
     canvas.addEventListener('mousemove', function(evt) {
@@ -38,6 +42,9 @@ function init() {
         game.onReleaseClick(evt);
     });
 
+    window.addEventListener('resize', function(){
+        readjustCanvas(canvas);
+    }, false);
     
 
     var Loop = function() {
