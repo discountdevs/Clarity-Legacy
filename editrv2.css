@@ -1,0 +1,33 @@
+body {
+	background: #1d1b31;
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+html {
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+#editrCanvas {
+    width: 100%;
+    height: 100%;
+    image-rendering: pixelated;
+}
+
+#tileSelectBar {
+    position:absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 6%;
+    width: 100%;
+    background-color: rgba(73, 73, 73, 0.514);
+    z-index: 999999;
+    backdrop-filter: blur(20px);
+    border-top: 0.4vh solid rgb(44, 44, 44);
+}

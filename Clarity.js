@@ -20,6 +20,8 @@ var Clarity = function () {
   this.checkpoint = false;
   this.multiplayer = false;
   this.username = false;
+  this.coinList = [];
+  this.coinCount = 0;
   this.viewport = {
     x: 200,
     y: 200
@@ -157,7 +159,11 @@ Clarity.prototype.load_map = function (map) {
           spawnx = x;
           spawny = y;
         }
-
+        
+        if (tile == 25 || tile.id == 25){
+          this.coinList.push([spawnx, spawny])
+        }
+        
         _this.current_map.width = Math.max(_this.current_map.width, x);
 
         if (tile == key.id)
@@ -495,17 +501,15 @@ Clarity.prototype.move_player = function () {
 
 Clarity.prototype.update_player = function () {
 
+  if (this.isInside(25)){
+
+  }
+
+
   if (this.key.left) {
     if (this.player.vel.x > -this.current_map.vel_limit.x)
       this.player.vel.x -= this.current_map.movement_speed.left;
   }
-
-
-
-
- 
-
-
 
 // 1. If the player presses the up arrow, then check if they can jump.
 // 2. If the player can jump, then check if they're touching a wall.
