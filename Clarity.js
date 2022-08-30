@@ -2,7 +2,6 @@ var Clarity = function () {
   this.start_time = performance.now();
   
   this.socket = io("https://clarityMultiplayer.n3rdl0rd.repl.co");
-
   
   this.socket.on("players", (players) => {
     game.handleLobby(players);
