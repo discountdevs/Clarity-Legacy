@@ -1,3 +1,4 @@
+// Abandon hope, all ye who enter here
 var Clarity = function () {
     this.start_time = performance.now();
 

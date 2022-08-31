@@ -1,3 +1,5 @@
+/* Abandon hope, all ye who enter here */
+
 body {
 	background: #1d1b31;
     padding: 0px;
@@ -14,6 +16,10 @@ html {
     height: 100%;
 }
 
+* {
+    overflow: hidden;
+}
+
 #editrCanvas {
     width: 100%;
     height: 100%;
@@ -26,8 +32,24 @@ html {
     left: 0px;
     height: 8%;
     width: 100%;
+    padding-top: 0.7vh;
+    padding-left: 1vh;
+    padding-right: 1vh;
+    padding-bottom: 1vh;
     background-color: rgba(73, 73, 73, 0.514);
     z-index: 999999;
     backdrop-filter: blur(20px);
-    border-top: 0.4vh solid rgb(44, 44, 44);
+    border-top: 0.4vh solid rgb(54, 54, 54);
+}
+
+.tileOption {
+    display: inline-block;
+    height: 6vh;
+}
+
+#tooltip {
+    position: absolute;
+    bottom: 9%;
+    left: 1vh;
+    color: white;
 }

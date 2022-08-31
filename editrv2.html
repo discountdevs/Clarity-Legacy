@@ -28,8 +28,10 @@
 
 <body>
     <div id="tileSelectBar">
-
+      <img src="https://via.placeholder.com/180" class="tileOption" onmouseover="tooltip('im so cool omg')" onmouseleave="untooltip()">
     </div>
+
+    <span id="tooltip"></span>
     <script src="ClarityE.js"></script>
     <script src="editrDefautMap.js"></script>
     <script src="editrv2.js"></script>
@@ -43,6 +45,14 @@
             function(callback) {
                 return window.setTimeout(callback, 1000 / 60);
         };
+
+        function tooltip(text){
+          document.querySelector("#tooltip").innerHTML = text;
+        }
+
+        function untooltip(){
+          document.querySelector("#tooltip").innerHTML = "";
+        }
     </script>
 </body>
 

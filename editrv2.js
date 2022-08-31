@@ -1,3 +1,5 @@
+// Abandon hope, all ye who enter here
+
 function init() {
     createHiDPICanvas = function() {
         let cv = document.createElement("canvas");
@@ -48,18 +50,14 @@ function init() {
     
 
     var Loop = function() {
-
         ctx.fillStyle = '#111';
         ctx.fillRect(0, 0, canvas.width, canvas.height);
-        
+        // Draw the game
         game.update();
         game.draw(ctx);
-        
-        // window.requestAnimFrame(Loop);
-
     };
 
-    var interval = setInterval(Loop, 16.7);
+    window.renderInterval = setInterval(Loop, 16.7);
 }
 
 init();
