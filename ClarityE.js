@@ -542,7 +542,7 @@ var Clarity = function () {
         return; // Don't let the user place blocks outside the array
       }
 
-      this.current_map.data[worldY][worldX] = this.current_map.keys[1]; // Air
+      this.current_map.data[worldY][worldX] = this.current_map.keys[0]; // Void
     }
   }
   

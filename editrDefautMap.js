@@ -70,7 +70,7 @@ walljumpimg.src =
 
 window.spawnimg = new Image();
 spawnimg.src =
-  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAADJJREFUOE9jrK+v/8/JyclADvj+/TsDY0dHx39yNMP0jBrAMBqIDKNhAMoPlOcFSrMzAD6dL0uPtm9RAAAAAElFTkSuQmCC";
+  "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAGZJREFUOE9j5Klm+M9AAWCEGcDTQpopX2og6sEGkKoZZhXIENoYUJWM3Tttc1HFsboApjnXE1Xx5O0QPrIhOA1A1wwzCmTISDEA5GeyAxGkmaJoJCVBUy8lgmwlNT+gZCZSnI2uFgBttFBxn/KikgAAAABJRU5ErkJgggAA";
 
 window.secondaryunlockimg = new Image();
 secondaryunlockimg.src =
@@ -97,52 +97,135 @@ window.map = {
 
   keys: [
     // Void
-    { id: 0, colour: "#333", solid: 0 },
+    {
+      id: 0,
+      colour: "#333",
+      solid: 0,
+      blockname: "Void"
+    },
     // Air
-    { id: 1, colour: "#888", solid: 0, img: airimg },
+    {
+      id: 1,
+      colour: "#888",
+      solid: 0,
+      img: airimg,
+      blockname: "Air"
+    },
     // Platform
-    { id: 2, colour: "#555", solid: 1, bounce: 0.35, img: wallimg },
+    {
+      id: 2,
+      colour: "#555",
+      solid: 1,
+      bounce: 0.35,
+      img: wallimg,
+      blockname: "Wall"
+    },
     // Water
     {
       id: 3,
       colour: "rgba(121, 220, 242, 0.4)",
-      friction: { x: 0.9, y: 0.9 },
-      gravity: { x: 0, y: 0.1 },
+      friction: {
+        x: 0.9,
+        y: 0.9
+      },
+      gravity: {
+        x: 0,
+        y: 0.1
+      },
       jump: 1,
       fore: 1,
       img: waterimg,
+      blockname: "Water"
     },
     // Elevator
     {
       id: 4,
       colour: "#b37859",
-      gravity: { x: 0, y: -0.1 },
+      gravity: {
+        x: 0,
+        y: -0.1
+      },
       jump: 1,
       img: elevatorimg,
+      blockname: "Elevator"
     },
     // Bounce
-    { id: 5, colour: "#E373FA", solid: 1, bounce: 1.1, img: bouncerimg },
+    {
+      id: 5,
+      colour: "#E373FA",
+      solid: 1,
+      bounce: 1.1,
+      img: bouncerimg,
+      blockname: "Bouncer"
+    },
     // AntiBounce
-    { id: 6, colour: "#666", solid: 1, bounce: 0, img: antibounceimg },
+    {
+      id: 6,
+      colour: "#666",
+      solid: 1,
+      bounce: 0,
+      img: antibounceimg,
+      blockname: "Anti Bouncer"
+    },
     // Color Changer Random
-    { id: 7, colour: "#73C6FA", solid: 0, script: "change_colour" },
+    {
+      id: 7,
+      colour: "#73C6FA",
+      solid: 0,
+      script: "change_colour",
+      blockname: false
+    },
     // Goal
-    { id: 8, colour: "#FADF73", solid: 0, script: "next_level", img: goalimg },
+    {
+      id: 8,
+      colour: "#FADF73",
+      solid: 0,
+      script: "next_level",
+      img: goalimg,
+      blockname: "Goal"
+    },
     // Die
-    { id: 9, colour: "#C93232", solid: 0, script: "death", img: deathimg },
+    {
+      id: 9,
+      colour: "#C93232",
+      solid: 0,
+      script: "death",
+      img: deathimg,
+      blockname: "Lava"
+    },
     // Unlockable Wall
-    { id: 10, colour: "#555", solid: 1, img: lockedimg },
+    {
+      id: 10,
+      colour: "#555",
+      solid: 1,
+      img: lockedimg,
+      blockname: "Unlockable Wall"
+    },
     // Unlock Tile
-    { id: 11, colour: "#0FF", solid: 0, script: "unlock", img: unlockimg },
+    {
+      id: 11,
+      colour: "#0FF",
+      solid: 0,
+      script: "unlock",
+      img: unlockimg,
+      blockname: "Key"
+    },
     // Saltwater
     {
       id: 12,
       colour: "rgba(121, 220, 242, 0.4)",
-      friction: { x: 0.9, y: 0.95 },
-      gravity: { x: 0, y: -0.07 },
+      friction: {
+        x: 0.9,
+        y: 0.95
+      },
+      gravity: {
+        x: 0,
+        y: -0.07
+      },
       jump: 1,
       fore: 1,
       img: saltwaterimg,
+      blockname: "Saltwater"
     },
     // Speed Zone
     {
@@ -152,26 +235,41 @@ window.map = {
       fore: 1,
       boost: 1,
       img: spedimg,
+      blockname: "gotta go fast zone"
     },
     // Tar
     {
       id: 14,
       colour: "#453a4f",
-      friction: { x: 0.3, y: 0.1 },
-      gravity: { x: 0, y: 2 },
+      friction: {
+        x: 0.3,
+        y: 0.1
+      },
+      gravity: {
+        x: 0,
+        y: 2
+      },
       jump: 1,
       fore: 1,
       img: tarimg,
+      blockname: "Tar"
     },
     // Quick Sand
     {
       id: 15,
       colour: "#edb06e",
-      friction: { x: 0.6, y: 0.5 },
-      gravity: { x: 0, y: 0.3 },
+      friction: {
+        x: 0.6,
+        y: 0.5
+      },
+      gravity: {
+        x: 0,
+        y: 0.3
+      },
       jump: 1,
       fore: 1,
       img: sandimg,
+      blockname: "Quicksand"
     },
     // Checkpoint
     {
@@ -180,6 +278,7 @@ window.map = {
       solid: 0,
       script: "checkpoint",
       img: checkpointimg,
+      blockname: "Checkpoint"
     },
     // Ice
     {
@@ -188,18 +287,52 @@ window.map = {
       solid: 1,
       fore: 1,
       bounce: 0.35,
-      gravity: { x: 0, y: 0.1 },
+      gravity: {
+        x: 0,
+        y: 0.1
+      },
       jump: 1,
       img: iceimg,
+      blockname: "slippery stuff"
     },
     // Wall Jump
-    { id: 18, colour: "#558", solid: 1, bounce: 0, jump: 1, img: walljumpimg },
+    {
+      id: 18,
+      colour: "#558",
+      solid: 1,
+      bounce: 0,
+      jump: 1,
+      img: walljumpimg,
+      blockname: "Wall Jump"
+    },
     // Foreground Wall Block
-    { id: 19, colour: "#553", solid: 0, fore: 1, bounce: 0, img: wallimg },
+    {
+      id: 19,
+      colour: "#553",
+      solid: 0,
+      fore: 1,
+      bounce: 0,
+      img: wallimg,
+      blockname: false
+    },
     // Spawn Block
-    { id: 20, colour: "#551", solid: 0, fore: 1, bounce: 0, img: spawnimg },
+    {
+      id: 20,
+      colour: "#551",
+      solid: 0,
+      fore: 1,
+      bounce: 0,
+      img: spawnimg,
+      blockname: "Spawn Point"
+    },
     // Secondary Unlockable Wall
-    { id: 21, colour: "#535", solid: 1, img: secondarytileimg },
+    {
+      id: 21,
+      colour: "#535",
+      solid: 1,
+      img: secondarytileimg,
+      blockname: false
+    },
     // Secondary Unlock Tile
     {
       id: 22,
@@ -207,13 +340,32 @@ window.map = {
       solid: 0,
       script: "unlock2",
       img: secondaryunlockimg,
+      blockname: false
     },
     // Mossy Wall Block
-    { id: 23, colour: "#355432", solid: 1, img: mossyimg },
+    {
+      id: 23,
+      colour: "#355432",
+      solid: 1,
+      img: mossyimg,
+      blockname: "Mossy Wall"
+    },
     // Overhanging Moss
-    { id: 24, colour: "#355456", solid: 0, img: mossimg },
+    {
+      id: 24,
+      colour: "#355456",
+      solid: 0,
+      img: mossimg,
+      blockname: "Overhanging Moss"
+    },
     // Coin block
-    { id: 25, colour: "#FFF", solid: 0, img: coinimg },
+    {
+      id: 25,
+      colour: "#FFF",
+      solid: 0,
+      img: coinimg,
+      blockname: false
+    },
   ],
   // End EDITOR and MAIN similar code
 
@@ -555,22 +707,16 @@ window.map = {
     colour: "#FF6B00",
   },
 
-  /* scripts refered to by the "script" window.iable in the tile keys */
+  /* scripts refered to by the "script" var in the tile keys */
 
   scripts: {
-    change_colour:
-      'this.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
-    /* you could load a new map window.iable here */
-    next_level:
-      'this.current_map.player.x = 1; this.current_map.player.y = 1; this.load_map(map);this.current_map.keys[10].solid = 1;this.current_map.keys[10].img = lockedimg;this.current_map.keys[21].solid = 1; this.current_map.keys[21].img = secondarytileimg;window. timemillis = performance.now() - window.start_time;window.start_time = performance.now(); exitFullscreen(); Swal.fire({title:"Level Completed!", html: "<i>"+winmsgs[Math.floor(Math.random()*winmsgs.length)] + "</i><br><br><b>Your time: "+(timemillis*0.001).toFixed(2)+" seconds</b><br><br><button class=\'button-62\' role=\'button\' onclick=\'subTime("+(timemillis*0.001).toFixed(2)+")\'>Submit time to leaderboard</button>", });',
-    death:
-      'this.load_map(map);this.current_map.keys[10].solid = 1;this.current_map.keys[10].img = lockedimg;this.current_map.keys[21].solid = 1; this.current_map.keys[21].img = secondarytileimg; if(this.deathmsgs){Swal.fire({title:"You Died!", html: "<i><b>"+deathmsgs[Math.floor(Math.random()*deathmsgs.length)] + "</b></i>", });}',
-    unlock:
-      "this.current_map.keys[10].solid = 0;this.current_map.keys[10].img = airimg;",
-    unlock2:
-      "this.current_map.keys[21].solid = 0;this.current_map.keys[21].img = airimg;",
-    checkpoint:
-      'this.current_map.player.x = Math.round(this.player.loc.x/16);this.current_map.player.y = Math.round(this.player.loc.y/16); console.log("CHECKPOINT"); this.checkpoint = true;',
+    change_colour: 'this.player.colour = "#"+(Math.random()*0xFFFFFF<<0).toString(16);',
+    /* you could load a new mapvar here */
+    next_level: 'this.current_map.player.x = 1; this.current_map.player.y = 1; this.checkpoint = false; this.load_map(map);this.current_map.keys[10].solid = 1;this.current_map.keys[10].img = lockedimg;this.current_map.keys[21].solid = 1; this.current_map.keys[21].img = secondarytileimg;window. timemillis = performance.now() - window.start_time;window.start_time = performance.now(); exitFullscreen(); Swal.fire({title:"Level Completed!", html: "<i>"+winmsgs[Math.floor(Math.random()*winmsgs.length)] + "</i><br><br><b>Your time: "+(timemillis*0.001).toFixed(2)+" seconds</b><br><br><button class=\'button-62\' role=\'button\' onclick=\'subTime("+(timemillis*0.001).toFixed(2)+")\'>Submit time to leaderboard</button>", });',
+    death: 'this.load_map(map);this.current_map.keys[10].solid = 1;this.current_map.keys[10].img = lockedimg;this.current_map.keys[21].solid = 1; this.current_map.keys[21].img = secondarytileimg; if(this.deathmsgs){Swal.fire({title:"You Died!", html: "<i><b>"+deathmsgs[Math.floor(Math.random()*deathmsgs.length)] + "</b></i>", });}',
+    unlock: "this.current_map.keys[10].solid = 0;this.current_map.keys[10].img = airimg;",
+    unlock2: "this.current_map.keys[21].solid = 0;this.current_map.keys[21].img = airimg;",
+    checkpoint: 'this.current_map.player.x = Math.round(this.player.loc.x/16);this.current_map.player.y = Math.round(this.player.loc.y/16); console.log("CHECKPOINT"); this.checkpoint = true;',
   },
 
   background: "#222",

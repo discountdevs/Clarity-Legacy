@@ -18,6 +18,10 @@ html {
 
 * {
     overflow: hidden;
+    -webkit-user-select: none;  
+    -moz-user-select: none;    
+    -ms-user-select: none;      
+    user-select: none;
 }
 
 #editrCanvas {
@@ -42,9 +46,31 @@ html {
     border-top: 0.4vh solid rgb(54, 54, 54);
 }
 
+.unselected {
+    opacity: 0.5;
+}
+
+img {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-drag: none;
+}
+
 .tileOption {
     display: inline-block;
     height: 6vh;
+    image-rendering: pixelated;
+}
+
+.tileOption.unselected:hover {
+    opacity: 1;
+}
+
+.tileOption:not(.unselected) {
+    /* Add a nice little border to the tile */
+    border: 0.2vh solid rgb(43, 43, 43);
 }
 
 #tooltip {
