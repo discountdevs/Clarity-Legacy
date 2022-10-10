@@ -183,7 +183,7 @@
           const gameId = urlParams.get('id');
           const contButtons = document.getElementById("instruct");
 
-          contButtons.innerHTML = contButtons.innerHTML + `<br/><br/><a href="https://discountdevs.github.io/Clarity/level.html?id={id}">Back to Workshop</a><br/>`.replace("{id}", gameId);
+          contButtons.innerHTML = contButtons.innerHTML + `<br/><br/><a href="https://discountdevs.github.io/Clarity-Legacy/level.html?id={id}">Back to Workshop</a><br/>`.replace("{id}", gameId);
           
           const lvlCode = httpGet("https://clarityworkshop.n3rdl0rd.repl.co/levelById/"+gameId);
           loadFromParam(lvlCode);

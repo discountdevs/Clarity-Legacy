@@ -491,7 +491,7 @@ Clarity.prototype.move_player = function () {
   // Emit event to server
   if(this.id && this.multiplayer){
     if(!signedin()){
-      window.location.href="https://discountdevs.github.io/Clarity/";
+      window.location.href="https://discountdevs.github.io/Clarity-Legacy/";
     }
     this.socket.emit("move", this.id, {x: this.player.loc.x, y: this.player.loc.y}, signedin());
   }
