@@ -1,3 +1,8 @@
+# This repo is the legacy version of Clarity!
+
+This repo is not maintained actively.
+
+
 # Clarity
 Clarity ~ The Modern, Moddable Platformer! 
 
